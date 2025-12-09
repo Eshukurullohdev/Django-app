@@ -15,18 +15,13 @@
     <div class="flex items-center justify-center align-center gap-[10px] mt-[60px]">
         {% for narsalar in narsalar %}
         <div class="">
-            <img class="w-[209px] h-[339px] rounded-[10px]" src="{{ narsalar.img.url }}" alt="">
+            <img class="w-[209px] h-[339px] rounded-[10px] object-cover" src="{{ narsalar.img.url }}" alt="">
             <h2 class="text-[#7f4dff]">{{ narsalar.karta_tolov }}</h2>
             <h3 class="text-[#7e818c]">{{ narsalar.narhi }}</h3>
             <p class="text-[12px] text-[#1f2026]">{{ narsalar.tavsifi }}</p>
         </div>    
         {% endfor %}
-    </div>
-
-    <div>
-        
-    </div>
-        
+    </div>       
 </body>
 
 </html>
