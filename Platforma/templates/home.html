@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,24 @@
 </head>
 
 <body>
-    <div class="flex items-center justify-center align-center gap-[10px] mt-[60px]">
+    <div class="flex items-center justify-center gap-[10px]   mt-[60px] w-[1200px] flex-wrap">
         {% for narsalar in narsalar %}
-        <div class="">
+        <div class="relative w-[250px]">
             <img class="w-[209px] h-[339px] rounded-[10px] object-cover" src="{{ narsalar.img.url }}" alt="">
+            {% if narsalar.sifati %}
+            <span class="absolute top-[310px] left-[10px] text-[12px] text-[#1f2026] p-[2px] bg-white rounded-[5px]">✅
+                Original</span>
+            {% endif %}
+            {% if narsalar.super_narh %}
+            <span class="absolute top-[310px] left-[120px] text-[12px] text-[#1f2026] p-[2px] bg-white rounded-[5px]">✅
+                Super narh</span>
+            {% endif %}
             <h2 class="text-[#7f4dff]">{{ narsalar.karta_tolov }}</h2>
             <h3 class="text-[#7e818c]">{{ narsalar.narhi }}</h3>
             <p class="text-[12px] text-[#1f2026]">{{ narsalar.tavsifi }}</p>
-        </div>    
+        </div>
         {% endfor %}
-    </div>       
+    </div>
 </body>
 
 </html>
