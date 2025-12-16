@@ -18,6 +18,16 @@ class Tovar(models.Model):
     tavsifi = models.CharField(max_length=150)
     sifati = models.BooleanField(null=True)
     super_narh = models.BooleanField(null=True)
+    
     def __str__(self):
         return self.tavsifi
 
+
+# str  -- textField, Charfield
+
+class Items(models.Model):
+    paragrph = models.CharField(max_length=50)
+    mini_info = models.TextField()
+
+    def __str__(self):
+        return self.paragrph
